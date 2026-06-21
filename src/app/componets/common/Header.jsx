@@ -191,6 +191,7 @@ export default function Header() {
       </div>
 
       {/* Mobile Menu */}
+      {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden bg-slate-900 px-6 py-5 space-y-4">
           <Link href="/" className="block text-white hover:text-pink-400">
@@ -204,6 +205,13 @@ export default function Header() {
             About
           </Link>
 
+          <Link
+            href="/product-server"
+            className="block text-white hover:text-pink-400"
+          >
+            Server
+          </Link>
+
           {/* Mobile Courses Dropdown */}
           <div>
             <button
@@ -211,7 +219,11 @@ export default function Header() {
               className="flex items-center justify-between w-full text-white hover:text-pink-400"
             >
               Courses
-              <FaChevronDown />
+              <FaChevronDown
+                className={`transition-transform duration-300 ${
+                  courseOpen ? "rotate-180" : ""
+                }`}
+              />
             </button>
 
             {courseOpen && (
@@ -257,6 +269,13 @@ export default function Header() {
                 >
                   Database
                 </Link>
+
+                <Link
+                  href="/courses/graphic-design"
+                  className="block text-gray-300 hover:text-pink-400"
+                >
+                  Graphic Design
+                </Link>
               </div>
             )}
           </div>
@@ -269,14 +288,14 @@ export default function Header() {
           </Link>
 
           <Link
-            href="/contact"
+            href="/contact-us"
             className="block text-white hover:text-pink-400"
           >
             Contact
           </Link>
 
           {/* Mobile Social Icons */}
-          <div className="flex gap-4 pt-4">
+          <div className="flex gap-4 pt-4 border-t border-slate-700">
             <a href="#" className="text-white text-xl hover:text-pink-400">
               <FaFacebookF />
             </a>
